@@ -10,10 +10,22 @@
 <!--   Deinfe beans here-->
 <!--    two things needed to configure bean here-->
 <!--    1. The special identifier and the full extention to the class name starting from the package name-->
+
+<!--   define dependency for your bean-->
     <bean id="myCoach"
-    class="jerry.TrackCoach"
+    class="jerry.BaseballCoach"
     >
 
+<!--   2     the class to implement the construction injection must have a onstructor, e.g
+    the constructor injection will not work for happy fortune service because it does not have any constructor
+-->
+        <constructor-arg ref="myFortune"/>
     </bean>
+
+<bean id="myFortune" class="jerry.HappyFortuneService">
+<!--    using constructor injection in here -->
+
+
+</bean>
 
 </beans>
